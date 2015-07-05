@@ -13,8 +13,10 @@
     function helloCtrl($scope){
       $scope.conf = conf;
     }
-    function save() {
-      localStorage['conf'] = JSON.stringify(conf);
+    function DataCtrl($scope){
+      $scope.save = function () {
+        localStorage['conf'] = JSON.stringify(conf);
+      }
     }
   </script>
 </head>
@@ -24,8 +26,8 @@
     <input type="text" ng-model="conf.name" />
     <span>{{conf.name}}</span>
   </div>
-  <div >
-    <button onclick="save()">変更を保存</button>
+  <div ng-controller="DataCtrl">
+    <button ng-click="save()">変更を保存</button>
   </div>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
 </body>
