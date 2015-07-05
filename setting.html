@@ -13,10 +13,11 @@
     function helloCtrl($scope){
       $scope.conf = conf;
     }
-    function DataCtrl($scope){
-      $scope.save = function () {
+    function save() {
         localStorage['conf'] = JSON.stringify(conf);
-      }
+    }
+    function DataCtrl($scope){
+      $scope.save = save;
     }
   </script>
 </head>
