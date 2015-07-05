@@ -5,7 +5,7 @@
     var conf = {
       name : 'guest'
     };
-    var str=localStorage['cong'] || JSON.stringify(conf);
+    var str=localStorage['conf'] || JSON.stringify(conf);
     var _conf = JSON.parse(str);
     for(i in _conf) {
       conf[i]=conf[i];
@@ -15,13 +15,12 @@
     }
     function DataCtrl($scope){
       $scope.save = function () {
-        localStorage['cong'] = JSON.stringify(conf);
+        localStorage['conf'] = JSON.stringify(conf);
       }
     }
   </script>
 </head>
 <body ng-app>
-  
   <div ng-controller="helloCtrl">
     <span>名前</span>
     <input type="text" ng-model="conf.name" />
