@@ -6,9 +6,8 @@ use mouse anywhere, anyplatform
 1. include [webmouse.js](http://sunatomo.github.io/webmouse/webmouse.js) into your webpages.
 2. handle mouse event on client script at your webpage. like below
 ```
-  webmouse.addEventListener()
+	  webmouse.addEventListener()
 ```
-3. that's all
 
 # IMPORTANT
 
