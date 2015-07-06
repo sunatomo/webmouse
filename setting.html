@@ -8,7 +8,7 @@
     var str=localStorage['conf'] || JSON.stringify(conf);
     var _conf = JSON.parse(str);
     for(i in _conf) {
-      conf[i]=conf[i];
+      conf[i]=_conf[i];
     }
     function helloCtrl($scope){
       $scope.conf = conf;
