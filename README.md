@@ -9,3 +9,8 @@ use mouse anywhere, anyplatform
   webmouse.addEventListener()
 ```
 3. that's all
+
+# IMPORTANT
+
+user must setting username on [setting pagr](http://sunatomo.github.io/webmouse/setting.html) in oder to <br>
+So,
