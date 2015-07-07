@@ -8,6 +8,7 @@ use mouse anywhere, anyplatform
 ```
 	  webmouse.addEventListener()
 ```
+3. then, you can use webmouse by opening [controlle panel](http://sunatomo.github.io/webmouse/panel.html) on another device.
 
 # IMPORTANT
 
