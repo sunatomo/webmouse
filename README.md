@@ -11,5 +11,5 @@ use mouse anywhere, anyplatform
 
 # IMPORTANT
 
-user must setting username on [setting pagr](http://sunatomo.github.io/webmouse/setting.html) in oder to <br>
+user must setting username on [setting page](http://sunatomo.github.io/webmouse/setting.html) in oder to <br>
 So,
