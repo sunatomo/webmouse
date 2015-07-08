@@ -19,6 +19,7 @@
       var dbg = document.getElementById('debug');
       ptr.onmousemove = function (e){
         dbg.innerText= 'x:' + e.screenX + ' y:'+ e.screenY;
+        e.preventDefault();
         return false;
       };
       
