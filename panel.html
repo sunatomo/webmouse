@@ -17,11 +17,18 @@
       var lbtn = document.getElementById('leftbutton');
       var rbtn = document.getElementById('rightbutton');
       var dbg = document.getElementById('debug');
-      ptr.onmousemove = function (e){
-        dbg.innerText= 'x:' + e.screenX + ' y:'+ e.screenY;
-        e.preventDefault();
-        return false;
-      };
+      ptr.addEventListener("touchmove", function (e) {
+  			var touch_list = e.changedTouches;
+  			for(var i=0;i < touch_list.length;i++){
+  				var touch = touch_list[i];
+  				if(touch.identifier != 0 ) continue;
+  				dbg.innerText="clientX:" + touch.clientX +" clientY:" + touch.clientY;
+  			}
+  			if(e.cancelable){
+  				e.preventDefault();
+  			}
+        
+      });
       
     }, false);
   </script>
