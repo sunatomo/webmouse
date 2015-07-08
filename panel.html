@@ -13,12 +13,12 @@
   </style>
   <script>
     var X=0,Y=0,x,y;
+    	alert("ok");
     function sendPos() {
           var dbg = document.getElementById('debug');
   				dbg.innerText="clientX:" + x +" clientY:" + y+ (new Date());
     }
     window.addEventListener("load", function(){
-    	alert("ok");
       var moving=false;
       
       var ptr = document.getElementById('pointer');
