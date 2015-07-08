@@ -49,16 +49,17 @@
 				Y=touch.clientY;
   			e.preventDefault();
         moving = setInterval(sendPos,500);
-      }
+      });
       
       ptr.addEventListener("touchend", function (e) {
 				var touch = firstTouch(e);
 				if(!touch) return;
         clearInterval(moving);
-      }
+      });
+      
       ptr.addEventListener("touchcancel", function (e) {
         clearInterval(moving);
-      }
+      });
       
     }, false);
   </script>
