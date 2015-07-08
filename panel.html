@@ -12,23 +12,53 @@
     }
   </style>
   <script>
+    var X=0,Y=0,x,y;
+    function sendPos() {
+          var dbg = document.getElementById('debug');
+  				dbg.innerText="clientX:" + x +" clientY:" + y+ (new Date());
+    }
     window.addEventListener("load", function(){
+      var moving=false;
+      
       var ptr = document.getElementById('pointer');
       var lbtn = document.getElementById('leftbutton');
       var rbtn = document.getElementById('rightbutton');
       var dbg = document.getElementById('debug');
-      ptr.addEventListener("touchmove", function (e) {
+      
+      function firstTouch(e) {
   			var touch_list = e.changedTouches;
   			for(var i=0;i < touch_list.length;i++){
   				var touch = touch_list[i];
-  				if(touch.identifier != 0 ) continue;
-  				dbg.innerText="clientX:" + touch.clientX +" clientY:" + touch.clientY;
+  				if(touch.identifier != 0 ) continue
+  				return touch;
   			}
-  			if(e.cancelable){
-  				e.preventDefault();
-  			}
+  			return null;
+      }
+      ptr.addEventListener("touchmove", function (e) {
+				var touch = firstTouch(e);
+				if(!touch) return;
+				x=touch.clientX;
+				y=touch.clientY;
+  			e.preventDefault();
         
       });
+      ptr.addEventListener("touchstart", function (e) {
+				var touch = firstTouch(e);
+				if(!touch) return;
+				X=touch.clientX;
+				Y=touch.clientY;
+  			e.preventDefault();
+        moving = setInterval(sendPos,500);
+      }
+      
+      ptr.addEventListener("touchend", function (e) {
+				var touch = firstTouch(e);
+				if(!touch) return;
+        clearInterval(moving);
+      }
+      ptr.addEventListener("touchcancel", function (e) {
+        clearInterval(moving);
+      }
       
     }, false);
   </script>
