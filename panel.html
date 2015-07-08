@@ -11,16 +11,29 @@
       margin-top: 10px;
     }
   </style>
+  <script>
+    window.addEventListener("load", function(){
+      var ptr = document.getElementById('pointer');
+      var lbtn = document.getElementById('leftbutton');
+      var rbtn = document.getElementById('rightbutton');
+      var dbg = document.getElementById('debug');
+      ptr.onmousemove = function (e){
+        dbg.innerText= 'x:' + e.screenX + ' y:'+ e.screenY;
+      };
+      
+    }, false);
+  </script>
 </head>
 <body>
-  <div style="
+  <div id='debug'></div>
+  <div id='pointer' style="
     width: 100%;
     height: 80%;
     background-color: antiquewhite;
 ">
   
   </div>
-  <button></button>
-  <button></button>
+  <button id='leftbutton'></button>
+  <button id='rightbutton'></button></button>
 </body>
 </html>
