@@ -13,9 +13,18 @@
   </style>
   <script>
     var X=0,Y=0,x,y;
+    var str=localStorage['conf'];
+    if(!str) {
+    	window.location.href='setting.html';
+    	return;
+    }
+    var conf = JSON.parse(str);
+    var pusher = new Pusher('9884e051e0816a0f6f59', {
+      encrypted: true
+    });
+    var channel = pusher.subscribe(conf.name);
     function sendPos() {
-          var dbg = document.getElementById('debug');
-  				dbg.innerText="clientX:" + (x-X) +" clientY:" + (y-Y)+ (new Date());
+    	channel.trigger("client-mouse-moved", {x:x-X, y: y-Y});
   	X=x;
   	Y=y;
     }
