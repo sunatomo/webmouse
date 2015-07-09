@@ -17,7 +17,6 @@
     var str=localStorage['conf'];
     if(!str) {
     	window.location.href='setting.html';
-    	return;
     }
     var conf = JSON.parse(str);
     var pusher = new Pusher('9884e051e0816a0f6f59', {
