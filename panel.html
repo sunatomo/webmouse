@@ -23,6 +23,11 @@
       encrypted: true
     });
     var channel = pusher.subscribe(conf.name);
+    
+    channel.bind('client-mouse-moved', function(data) {
+      alert(data.message);
+    });
+    
     function sendPos() {
     	channel.trigger("client-mouse-moved", {x:x-X, y: y-Y});
   	X=x;
