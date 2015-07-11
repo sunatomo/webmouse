@@ -1,6 +1,21 @@
 <html>
 <head>
   <script>
+    var str=localStorage['conf'];
+    if(!str) {
+    	window.location.href='setting.html';
+    }
+    var conf = JSON.parse(str);
+    
+    var pusher = new Pusher('9884e051e0816a0f6f59', {
+      encrypted: true
+    });
+    var channel = pusher.channel("presence-"+conf.name);
+    
+    channel.bind('client-mouse-moved', function(data) {
+      alert(data.message);
+    });
+    
     window.onpostmessage=function (){
     }
   </script>
