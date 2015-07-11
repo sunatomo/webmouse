@@ -26,7 +26,7 @@
       alert(data.message);
     });
     
-    var channel = pusher.subscribe("private-"+conf.name);
+    var channel = pusher.subscribe("presence-"+conf.name);
     
     function sendPos() {
     	channel.trigger("client-mouse-moved", {x:x-X, y: y-Y});
