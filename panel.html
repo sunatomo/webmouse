@@ -22,11 +22,11 @@
     var pusher = new Pusher('9884e051e0816a0f6f59', {
       encrypted: true
     });
-    var channel = pusher.subscribe("private-"+conf.name);
-    
-    channel.bind('client-mouse-moved', function(data) {
+    pusher.bind('client-mouse-moved', function(data) {
       alert(data.message);
     });
+    
+    var channel = pusher.subscribe("private-"+conf.name);
     
     function sendPos() {
     	channel.trigger("client-mouse-moved", {x:x-X, y: y-Y});
