@@ -22,9 +22,7 @@
     var pusher = new Pusher('9884e051e0816a0f6f59', {
       encrypted: true
     });
-    pusher.bind('client-mouse-moved', function(data) {
-      alert(data.message);
-    });
+    
     
     var channel = pusher.subscribe("presence-"+conf.name);
     
