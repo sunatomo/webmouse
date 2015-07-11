@@ -8,7 +8,7 @@ function append() {
     document.body.appendChild(iframe);
   }
 }
-append();
 window.addEventListener("load", function(){
   append();
 });
+append();
