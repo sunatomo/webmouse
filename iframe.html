@@ -16,6 +16,7 @@
     
     channel.bind('pusher:subscription_succeeded', function() {
       var triggered = channel.trigger('client-someeventname', { your: "data" });
+      alert(triggered);
     });
     channel.bind('client-mouse-moved', function(data) {
       alert(data.message);
