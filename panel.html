@@ -24,8 +24,12 @@
       authEndpoint: 'auth.html'
     });
     
-    
     var channel = pusher.subscribe("presence-"+conf.name);
+    
+    channel.bind('pusher:subscription_succeeded', function() {
+      var triggered = channel.trigger('client-mouse-moved', { your: "data" });
+      alert(triggered);
+    });
     
     function sendPos() {
     	channel.trigger("client-mouse-moved", {x:x-X, y: y-Y});
