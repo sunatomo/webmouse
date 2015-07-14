@@ -10,9 +10,10 @@
     
     var pusher = new Pusher('9884e051e0816a0f6f59', {
       encrypted: true,
-      authEndpoint: 'auth.html'
+      authTransport: 'jsonp',
+      authEndpoint: 'http://sunatomo.github.io/webmouse/auth.js'
     });
-    var channel = pusher.channel("presence-"+conf.name);
+    var channel = pusher.channel("private-"+conf.name);
     
     channel.bind('pusher:subscription_succeeded', function() {
       var triggered = channel.trigger('client-someeventname', { your: "data" });
