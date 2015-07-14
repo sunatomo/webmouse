@@ -22,7 +22,7 @@
     var pusher = new Pusher('9884e051e0816a0f6f59', {
       encrypted: true,
       authTransport: 'jsonp',
-      authEndpoint: 'http://sunatomo.github.io/webmouse/auth.js'
+      authEndpoint: 'https://sunatomo.github.io/webmouse/auth.js'
     });
     
     var channel = pusher.subscribe("private-"+conf.name);
