@@ -13,7 +13,7 @@
       authTransport: 'jsonp',
       authEndpoint: 'http://sunatomo.github.io/webmouse/auth.js'
     });
-    var channel = pusher.channel("private-"+conf.name);
+    var channel = pusher.subscribe("private-"+conf.name);
     
     channel.bind('pusher:subscription_succeeded', function() {
       var triggered = channel.trigger('client-someeventname', { your: "data" });
