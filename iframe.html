@@ -16,7 +16,7 @@
     var channel = pusher.subscribe("private-"+conf.name);
     
     channel.bind('pusher:subscription_succeeded', function() {
-      var triggered = channel.trigger('client-someeventname', { your: "data" });
+      var triggered = channel.trigger('client-mouse-moved', { your: "data" });
       alert(triggered);
     });
     channel.bind('client-mouse-moved', function(data) {
