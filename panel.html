@@ -30,7 +30,7 @@
     
     
     channel.bind('pusher:subscription_succeeded', function() {
-    	dbg.innerText='connected';
+    	dbg.innerText='connected as'+conf.name;
     });
     
     function sendPos() {
