@@ -20,6 +20,7 @@
       };
       Pusher.auth_callbacks[1](auth);
       
+      break;
     }
     
   }
