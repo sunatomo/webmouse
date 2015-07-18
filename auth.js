@@ -16,7 +16,7 @@
       sha.setHMACKey('638ffaef0dd3ef1c90cd','TEXT');
       sha.update(socket_id+':'+channel_name);
       var auth={
-        auth : sha.getHMAC('HEX')
+        auth : '9884e051e0816a0f6f59:'+sha.getHMAC('HEX')
       };
       Pusher.auth_callbacks[1](auth);
       
