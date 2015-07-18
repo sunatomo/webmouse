@@ -12,11 +12,11 @@
         if(kv[0]=='channel_name') channel_name=kv[1];
       }
       
-      new jsSHA("SHA-256", "TEXT");
+      var sha = new jsSHA("SHA-256", "TEXT");
       sha.setHMACKey('638ffaef0dd3ef1c90cd','TEXT');
       sha.update(socket_id+':'+channel_name);
       var auth={
-        auth : sha.getHMAC('HEX');
+        auth : sha.getHMAC('HEX')
       };
       Pusher.auth_callbacks[1](auth);
       
