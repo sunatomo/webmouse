@@ -28,12 +28,10 @@
     
     var channel = pusher.subscribe("private-"+conf.name);
     
-    /*
+    
     channel.bind('pusher:subscription_succeeded', function() {
-      var triggered = channel.trigger('client-mouse-moved', { your: "data" });
-      alert(triggered);
+    	dbg.inerText='connected';
     });
-    */
     
     function sendPos() {
     	channel.trigger("client-mouse-moved", {x:x-X, y: y-Y});
@@ -46,8 +44,9 @@
       var ptr = document.getElementById('pointer');
       var lbtn = document.getElementById('leftbutton');
       var rbtn = document.getElementById('rightbutton');
-      var dbg = document.getElementById('debug');
+      dbg = document.getElementById('debug');
       
+      dbg.innerText='connecting as '+conf.name;
       function firstTouch(e) {
   			var touch_list = e.changedTouches;
   			for(var i=0;i < touch_list.length;i++){
